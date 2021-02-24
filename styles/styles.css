@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300&display=swap');
+
+/* Estilos base */
+:root {
+/* Colores */
+--color             : #3f3f3f;
+--color-alt         : #ffffff;
+--bg-color          : #f1f1f1;
+--black-color       : #000000;
+--footer-color      : #808080;
+
+/* Fuentes */
+--body-font         : 'Quicksand', 'sans-serif';
+--title-font        : 'Bebas Neue', 'cursive';
+
+/* Ancho */
+--min-width         : 1024px;
+
+/* Tamaños */
+--header-height     : 3rem;
+--footer-height     : 2rem;
+--block-spacing     : 2rem;
+--icon-spacing      : 1rem;
+--body-line-height  : 1.6;
+--title-line-height : 1.3;
+
+/* Tamaños de fuentes */
+--h1-font-size      : 4rem;
+--h2-font-size      : 1.5rem;
+--h3-font-size      : 1.25rem;
+--body-font-size    : 1rem;
+--footer-font-size  : 0.5rem;
+
+/* Capas */
+--z-back            : -10;
+--z-normal          : 1;
+--z-front           : 10;
+
+/* Otros */
+--border-radius     : 0.5rem;
+--box-shadow        : 0 5px 5px black;
+}
+
+
+/* Variables de tamaño móvil */
+@media screen and (max-width: 1024px) {
+    /* Tamaños */
+    :root {
+        --h1-font-size  : 3rem;
+        --h2-font-size  : 2rem;
+        --h3-font-size  : 1.5rem;
+        --block-spacing : 0.5rem;
+        --body-font-size: 1rem;
+    }
+
+    * {
+        margin          : 0;
+        padding         : 0;
+    }
+}
+
+
+/* ----- ESTILOS DE HEADER ----- */
+
+/* Menú */
+header {
+    margin          : 0;
+    display         : flex;
+    border-bottom   : 1px solid var(--black-color);
+}
+
+nav {
+    width           : 100%;  //Este me mantiene el sobrecito a la derecha
+}
+
+nav ul {
+    display         : flex;
+    width           : 100%;
+    margin          : 0;
+}
+
+nav ul {
+    margin-top      : var(--block-spacing);
+}
+
+a {
+    color           : var(--color);
+    text-decoration : none;
+}
+
+nav li {
+    list-style      : none;
+    display         : flex;
+    padding-left    : var(--block-spacing);
+    padding-right   : var(--block-spacing);
+    font-size       : var(--h2-font-size);
+}
+
+
+/* The Weeknd Logo */
+nav ul li:hover {
+    font-weight     : bolder;
+}
+
+h1 {
+    width           : 45%;
+    text-transform  : uppercase;
+    margin-left     : var(--block-spacing);
+    margin-top      : 0;
+    margin-bottom   : 0;
+    font-family     : var(--title-font);
+    font-size       : var(--h1-font-size);
+    display         : flex;  
+}
+
+/* Ícono contacto */
+a img {
+    height          : var(--body-font-size);
+}
+
+nav .last-li {
+    margin-left     : auto;
+    margin-right    : var(--block-spacing);
+}
+
+@media screen and (min-width: 1024px)  {
+    .menu {
+        display     : none;
+    }
+}
+
+
+/* -- MÓVIL HEADER -- */
+@media screen and (max-width: 1024px) {
+    nav {
+        display     : none;
+
+    }
+
+    h1 {
+        font-size   : var(--h1-font-size);
+        width       : 100%;
+    }
+    /* Poner nuevo menú acá para móvil */
+    .menu {
+        height: 1.5rem;
+        margin: 1.5rem;
+    }
+}
+
+
+
+
+/* ----- ESTILOS DE HOME ----- */
+
+body {
+    display         : flex;
+    flex-direction  : column;
+    min-height      : calc(100vh - var(--header-height));
+    color           : var(--color);
+    padding-top     : var(--block-spacing);
+    font-family     : var(--body-font);
+    font-size       : var(--body-font-size);
+    line-height     : var(--body-line-height);
+    background-color: var(--bg-color);
+    padding-top     : 0;
+}
+
+.home {
+    position        : relative;
+    padding-top     : var(--block-spacing);
+    padding-bottom  : var(--block-spacing);
+    display         : flex;
+    flex-direction  : row-reverse;
+    align-items     : center;
+}
+
+.home .abel {
+    margin-right    : 4.3%;
+}
+
+.afterhours {
+    position        : absolute;
+    margin-right    : 55.5%;
+}
+
+
+h2 {
+    
+    font-family     : var(--title-font);
+    font-size       : 12rem;
+    margin          : 0;
+}
+
+.stream {
+    display         : inline-flex;
+    position        : absolute;
+    color           : var(--color);
+    font-size       : larger;
+    text-transform  : uppercase;
+    border          : 1px solid var(--black-color);
+    padding         : 0 0.5rem;
+    margin-top      : -4rem;
+    font-weight     : bold;
+}
+
+.stream:hover {
+    background      : var(--black-color);
+    color           : var(--color-alt);
+    cursor          : pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .p-movil {
+        display     : none;
+    }
+}
+
+
+
+/* -- MÓVIL HOME MAIN -- */
+@media screen and (max-width: 1024px) {
+    .home {
+        padding         : 0;
+        display         : block;
+        margin-bottom   : 2rem;
+    }
+    
+    .home .abel {
+        width           : 100%;
+        margin-right    : 0;
+    }
+
+    .afterhours {
+        margin          : 0;
+        width           : 100%;
+    }
+
+    .afterhours h2 {
+        font-size       : var(--h2-font-size);
+        display         : block;
+        text-align      : center;
+    }
+
+    .stream {
+        display         : none;
+    }
+
+    .p-movil {
+        text-align      : center;
+        margin-top      : 3rem;
+        margin-left     : var(--block-spacing);
+        margin-right    : var(--block-spacing);
+    }
+
+
+}
+
+
+
+/* ----- ESTILOS DE FOOTER ----- */
+
+/* Redes sociales */
+footer {
+    display         : flex;
+    flex-direction  : column;
+    padding-top     : var(--block-spacing);
+}
+
+footer img:hover, 
+.derechos:hover {
+    cursor          : pointer;
+}
+
+footer img {
+    height          : var(--body-font-size);
+    padding-left    : var(--icon-spacing);
+    padding-right   : var(--icon-spacing);
+}
+
+
+/* Copyrights */
+.derechos {
+    display         : inline-flex;
+    padding-left    : var(--icon-spacing);
+    padding-right   : var(--icon-spacing);
+    font-size       : smaller;
+    color           : var(--footer-color);
+}
+
+.social {
+    margin          : auto;
+}
+
+.copyright {
+    margin          : auto;
+}
+
+
+/* -- MÓVIL FOOTER -- */
+@media screen and (max-width: 1024px) {
+    footer {
+        display         : block;
+    }
+
+    footer .social {
+        display         : flex;
+        margin          : 0 auto;
+        padding         : 0 var(--block-spacing);
+    }
+
+    .copyright .derechos {
+        display         : block;
+        margin-top      : var(--block-spacing);
+        margin-bottom   : var(--block-spacing);
+        text-align      : center;
+    }
+
+    .derechos:first-of-type {
+        margin-top      : 1.5rem;
+    }
+}
+
+
+
+
+/* ----- ESTILOS DE NEWS ----- */
+/* Banner */
+.banner-news img {
+    width       : 100%;
+}
+
+/* Artículo */
+.news h3, 
+.news p {
+    width       : 50%;
+    margin      : 0 auto;
+}
+
+.news h3 {
+    font-size   : 2.5rem;
+    line-height : normal;
+}
+
+.news p {
+    font-size   : 1.5rem;
+}
+
+/* -- MÓVIL NEWS -- */
+@media screen and (max-width: 1024px) {
+    .news h3, .news p {
+        width   : 70%;
+    }
+
+    .news h3 {
+        font-size: var(--h3-font-size);
+    }
+
+    .news p {
+        font-size: var(--body-font-size);
+    }
+
+    .news {
+        margin-bottom: var(--block-spacing);
+    }
+}
+
+
+
+/* ----- ESTILOS DE TOUR ----- */
+
+/* Banner */
+.banner {
+    width           : 100%;
+}
+
+/* Estilos de la lista del tour */
+table {
+    width           : 50%;
+    margin          : auto;
+    text-transform  : uppercase;
+    font-size       : var(--h3-font-size);
+    line-height     : 4rem;
+}
+
+td {
+    border-bottom   : 1px solid #c7c7c7;
+}
+
+/* Estilos de las ciudades del tour */
+.second {
+    font-weight     : bolder;
+    font-family     : var(--title-font);
+    font-size       : 1.5rem;
+}
+
+/* Estilos de los tickets */
+span {
+    border          : 0.2rem solid var(--black-color);
+    padding         : 0.25rem;
+    color           : var(--black-color);
+    font-weight     : bolder;
+    font-size       : smaller;
+}
+
+.tickets:hover {
+    cursor          : pointer;
+    border-color    : var(--color-alt);
+    color           : var(--footer-color);
+}
+
+
+/* -- MÓVIL TOUR -- */
+@media screen and (max-width: 1024px) {
+    .place {
+        display     : none;
+    }
+    
+    table {
+        margin          : 0;
+        width           : 100%;
+        line-height     : 1.75rem;
+        text-align      : center;
+        padding-bottom  : var(--block-spacing);
+    }
+    
+    tr {
+        display     : flex;
+        width       : 100%;
+    }
+    
+    td {
+      font-size     : 1rem;
+      font-size     : 0.75rem; 
+      width         : 100%;
+    }
+
+    .second {
+        font-size   : 1rem;
+        padding-top : 0.15rem;
+    }
+
+    .tickets {
+        border      : 0.1rem solid var(--black-color);
+    }
+}
+
+
+
+
+/* ----- ESTILOS DE MUSIC ----- */
+/* Albums' covers */
+.albums {
+    margin-top      : var(--block-spacing);
+    display         : flex;
+    border-bottom   : 1px solid var(--color);
+    padding-bottom  : var(--block-spacing);
+    width           : 100%
+}
+
+.albums div {
+    margin-left     : auto;
+    margin-right    : auto;
+    padding         : var(--block-spacing);
+}
+
+.albums img {
+    width           : 10rem;
+    height          : 10rem;
+    box-shadow      : var(--box-shadow);
+}
+
+.albums span {
+    border          : 1px solid var(--color);
+}
+
+
+/* Insertando los iframes desde Spotify */
+.spotify {
+    padding-top             : var(--block-spacing);
+    display                 : grid;
+    grid-template-columns   : auto auto auto;
+    width                   : 70%;
+    margin                  : auto;
+}
+
+.spotify div {
+    margin          : auto;
+    margin-bottom   : var(--block-spacing);
+    padding         : var(--block-spacing);
+}
+
+.spotify div:hover {
+    background-color: #dadada;
+    border-radius   : var(--border-radius);
+}
+
+/* Subtítulos y descripciones de los iframes */
+h3 {
+    margin-top      : 0;
+    margin-bottom   : 0;
+    font-size       : var(--h3-font-size);
+    font-family     : var(--title-font);
+}
+
+.spotify p {
+    margin-top      : 0;
+    font-size       : larger;
+    font-family     : var(--body-font);
+}
+
+@media screen and (min-width: 1024px) {
+    .listen:hover {
+        background-color: var(--black-color);
+        cursor          : pointer;
+    }
+
+    .listen a:hover {
+        color           : var(--color-alt);
+    }
+}
+
+
+/* -- MÓVIL MUSIC -- */
+@media screen and (max-width: 1024px) {
+    .albums {
+        display                : grid;
+        grid-template-columns  : repeat(2, 2fr);
+        padding-top            : var(--block-spacing);
+        border-bottom          : none;
+    }
+    
+    .albums img {
+        width           : 6.5rem;
+        height          : 6.5rem;
+    }
+
+    .albums h3 {
+        box-sizing      : border-box;
+        width           : 8rem;
+        line-height     : normal;
+        opacity         : 0.5;
+    }
+
+
+    .spotify {
+        display         : flex;
+        flex-direction  : column;
+        width           : 100%;
+        margin          : 0;
+    }
+
+    .spotify div:not(:last-of-type) {
+        height: 100vh;
+        padding-top: 4rem
+    }
+}
+
+
+
+
+
+/* ----- ESTILOS DE CONTACT ----- */
+/* Banner */
+.bg-contact img {
+    background-repeat   : no-repeat;
+    width               : 100%;
+}
+
+/* Estilos del formulario */
+.datos, form p {
+    margin-bottom   : var(--block-spacing);
+} 
+
+form ul {
+    padding         : 0;
+    margin          : 0;
+}
+
+form {
+    width           : 20%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius   : var(--border-radius);
+    margin-left     : 10%;
+    margin-top      : -37%;
+}
+
+form li {
+    list-style      : none;
+}
+
+.datos li {
+    display         : block;
+    width           : 100%;
+    height          : var(--block-spacing);
+}
+
+form .form {
+    padding         : var(--block-spacing);
+}
+
+/* Estilos de los tres primeros inputs */
+.email, .code, .country {
+    width           : 100%;
+    height          : 1.5rem;
+}
+
+form h3:first-of-type {
+    font-size       : var(--h1-font-size);
+    text-align      : center;
+}
+
+.datos li {
+    width           : 95%;
+}
+
+/* Estilos de los checkboxes */
+.subscribe li {
+    font-weight     : bolder;
+}
+
+form p {
+    font-size       : smaller;
+    margin-top      : 0;
+}
+
+/* Estilos del boón submit */
+.submit {
+    margin          : 0 35%;
+    height          : var(--block-spacing);
+}
+
+@media screen and (min-width: 1024px) {
+    .submit:hover {
+        background-color: var(--black-color);
+        color           : var(--color-alt);
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .bg-contact img {
+        display         : none;
+    }
+
+    form h3:first-of-type {
+        font-size       : var(--h2-font-size);
+        text-align      : center;
+    }
+
+    form h3:last-of-type {
+        text-align      : center;
+        margin-top      : var(--block-spacing);
+    }
+
+    form {
+        width           : 80%;
+        margin          : auto;
+        background-color: transparent;
+    }
+
+    .form {
+        margin-top      : 1.5rem;
+        margin-bottom   : 0.5rem;
+    }
+
+    .form ul {
+        padding-bottom: 1rem;
+    }
+
+    .datos li {
+        width           : 100%;
+        height          : 1.5rem;
+        padding-bottom  : 0.5rem;
+    }
+
+    .subscribe li {
+        font-weight     : normal;
+    }
+
+    .subscribe {
+        padding-bottom  : var(--block-spacing);
+    }
+
+    .submit {
+        height          : 1.5rem;
+        padding         : 0 1.5rem;
+        margin          : 0 30%;
+    }
+}
+
+
+
+/* -- Menú de navegación versión mobile --- */
+@media screen and (max-width: 1024px) {
+    .menu-mobile img {
+        height          : 3.5rem;
+    }
+    
+    .menu-mobile article {
+        display         : flex;
+        flex-direction  : row;
+        margin-bottom   : 2rem;
+    }
+
+    .menu-mobile article div {
+        width           : 100%;
+        text-align      : center;
+    }
+
+    .menu-mobile {
+        margin-top      : 2.5rem;
+    }
+
+    .menu-mobile h3 {
+        color           : var(--footer-color);
+        opacity         : 0.5;
+    }
+}
